@@ -4,7 +4,7 @@ var questions = [{
     b: "2. booleans",
     c: "3. alerts",
     d: "4. numbers",
-    correct: "3. Alerts",
+    correct: "3. alerts",
 },
 {
     q: "The condition in an if/else statement is enclosed with ____.",
