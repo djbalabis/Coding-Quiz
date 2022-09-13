@@ -1,3 +1,4 @@
+// questions variable array
 var questions = [{
     q: "Commonly used data types DO Not include:",
     a: "1. strings",
@@ -38,7 +39,7 @@ var questions = [{
     d: "4. console.log",
     correct: "4. console.log",
 }];
-
+// Created variables pointing towards the DOM elements
 var quizStart = document.getElementById("start");
 var timerEl = document.getElementById("timer");
 var quizContainer = document.querySelector("#quiz");
@@ -62,7 +63,7 @@ function adjustTime(amount) {
     }
     timerEl.textContent = "Time remaining: " + timeLeft + "s";
 }
-
+// Function to render questions and append to the DOM
 quizStart.onclick = timer;
 var renderQuestion = function(question) {
     quizContainer.innerHTML = "";
@@ -97,11 +98,12 @@ var currentQuestionIndex = 0;
 var userScore = 0;
 var correctAnswer = questions[currentQuestionIndex].correct;
 var viewScores = document.getElementById("scores");
-
+// Prevent default so page doesnt refresh
 var answerClick = function(event) {
     event.preventDefault();
     var userAnswer = event.target.textContent;
     correctAnswer = questions[currentQuestionIndex].correct;
+    // Determines if correct or not
     var answerDetermination = document.querySelector("#grade");
     if (userAnswer !== correctAnswer) {
         adjustTime(-10);
@@ -143,7 +145,7 @@ function highScores() {
 viewScores.addEventListener("click", () => {
     highScores();
 })
-
+// presents the initials input area and submit button
 var initials; 
 function endQuiz() {
     resetDisplay();
